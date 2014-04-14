@@ -5,7 +5,7 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(params.require(:car)
-      .permit(:color, :year, :mileage, :description))
+      .permit(:color, :year, :mileage, :description, :manufacturer_id))
 
     if @car.save
       redirect_to new_car_path, notice: "Car successfully added!"

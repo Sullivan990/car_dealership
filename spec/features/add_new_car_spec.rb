@@ -15,12 +15,15 @@ feature "submit a new car", %Q{
   # * Upon successfully creating a car, I am redirected so that I can create another car.
 
   scenario 'a user submits a valid car' do
+    manufacturer = FactoryGirl.create(:manufacturer)
     visit new_car_path
+    save_and_open_page
 
     fill_in 'Color', with: 'Red'
     select '1992', from: 'Year'
     fill_in 'Mileage', with: '200000'
     fill_in 'Description', with: 'Nice car.'
+    select 'Toyota', from: 'Manufacturer'
 
     click_button 'Add Car'
     # expect(page).to have_content 'Car successfully added!'
