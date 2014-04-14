@@ -1,0 +1,10 @@
+<h1>New Car</h1>
+
+<%= simple_form_for @car do |f| %>
+  <%= f.input :color, label: 'Color' %>
+  <%= f.input :year, collection: 1980..2014, label: 'Year' %>
+  <%= f.input :mileage, label: 'Mileage' %>
+  <%= f.input :description, as: :text, label: 'Description' %>
+
+  <%= f.button :submit, 'Add Car' %>
+<% end %>

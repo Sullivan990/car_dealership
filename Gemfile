@@ -22,4 +22,5 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem 'launchy'
 end
